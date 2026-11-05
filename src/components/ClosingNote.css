@@ -1,0 +1,118 @@
+/* ── CLOSING NOTE / LETTER ───────────────────────────────── */
+.closing {
+  padding: var(--section-pad) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background texture */
+.closing::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(185, 160, 212, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.closing__inner {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+/* Left decorative element */
+.closing__deco {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+  padding-top: 4rem;
+}
+
+.closing__deco-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, rgba(185, 160, 212, 0.3), transparent);
+}
+
+.closing__deco-num {
+  color: var(--lavender);
+  font-size: 0.6rem;
+  writing-mode: vertical-rl;
+  letter-spacing: 0.2em;
+}
+
+/* Letter */
+.closing__letter {
+  flex: 1;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.closing__letter-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.closing__heading {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1.1;
+}
+
+.closing__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding-left: 1px;
+  border-left: 1px solid var(--border);
+  padding-left: 2rem;
+}
+
+.closing__para {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  color: var(--gray);
+  line-height: 1.9;
+}
+
+/* Make the last para stand out */
+.closing__para:last-child {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--ivory);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+/* Signature */
+.closing__sig {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.closing__sig-name {
+  font-size: 2.4rem;
+  color: var(--lavender);
+  opacity: 0.8;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .closing__inner {
+    gap: 0;
+  }
+
+  .closing__deco {
+    display: none;
+  }
+
+  .closing__body {
+    padding-left: 1.25rem;
+  }
+}

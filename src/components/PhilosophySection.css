@@ -1,0 +1,101 @@
+/* ── PHILOSOPHY SECTION ──────────────────────────────────── */
+.philosophy {
+  padding: var(--section-pad) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+}
+
+/* Background decorative word */
+.philosophy__bg-word {
+  position: absolute;
+  right: -0.1em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-serif);
+  font-size: clamp(6rem, 20vw, 20rem);
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(185, 160, 212, 0.08);
+  pointer-events: none;
+  user-select: none;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+}
+
+.philosophy__content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.philosophy__heading {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: var(--ivory);
+  line-height: 1.1;
+}
+
+.philosophy__quote {
+  position: relative;
+  padding: 2.5rem 2.5rem 2.5rem 3rem;
+  border-left: 2px solid rgba(185, 160, 212, 0.4);
+  margin: 0;
+}
+
+.philosophy__quote p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ivory);
+  line-height: 1.65;
+}
+
+.philosophy__open-quote,
+.philosophy__close-quote {
+  position: absolute;
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  color: rgba(185, 160, 212, 0.15);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.philosophy__open-quote {
+  top: -0.2em;
+  left: 0.4rem;
+}
+
+.philosophy__close-quote {
+  bottom: -0.6em;
+  right: 0;
+}
+
+.philosophy__sig {
+  font-size: 2.2rem;
+  color: var(--lavender);
+  opacity: 0.6;
+  align-self: flex-end;
+  margin-top: -0.5rem;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .philosophy__bg-word {
+    font-size: clamp(5rem, 25vw, 12rem);
+    right: -0.2em;
+  }
+
+  .philosophy__quote {
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+  }
+}

@@ -1,0 +1,133 @@
+/* ── ABOUT SECTION ───────────────────────────────────────── */
+.about {
+  position: relative;
+  overflow: hidden;
+  padding: var(--section-pad) 0;
+}
+
+/* Editorial wrapper */
+.about__editorial-wrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  padding-top: 2rem;
+}
+
+/* Oversized "About" background text — Reference 1 inspired */
+.about__oversized {
+  position: absolute;
+  top: -0.15em;
+  left: -0.05em;
+  font-family: var(--font-serif);
+  font-size: clamp(7rem, 18vw, 18rem);
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(185, 160, 212, 0.18);
+  letter-spacing: -0.05em;
+  line-height: 0.8;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Portrait block — overlaps the oversized text */
+.about__portrait-block {
+  position: relative;
+  z-index: 2;
+  padding-top: clamp(3rem, 8vw, 6rem);
+}
+
+.about__portrait {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(185, 160, 212, 0.1);
+  /* Subtle editorial treatment */
+  filter: contrast(1.02) brightness(0.96);
+}
+
+/* Text block */
+.about__text {
+  position: relative;
+  z-index: 2;
+  padding-top: clamp(5rem, 12vw, 9rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.about__heading {
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  line-height: 1.2;
+  color: var(--ivory);
+}
+
+.about__body {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  color: var(--gray);
+  line-height: 1.85;
+}
+
+.about__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--border);
+  color: var(--gray);
+  border-radius: 2px;
+  transition: border-color var(--t-fast), color var(--t-fast);
+}
+
+.tag:hover {
+  border-color: var(--lavender);
+  color: var(--lavender);
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .about__editorial-wrap {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about__oversized {
+    font-size: clamp(5rem, 20vw, 10rem);
+    top: -0.1em;
+    left: -0.02em;
+  }
+
+  .about__portrait-block {
+    padding-top: clamp(4rem, 15vw, 7rem);
+    max-width: 300px;
+  }
+
+  .about__portrait {
+    max-width: 100%;
+  }
+
+  .about__text {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .about__oversized {
+    font-size: clamp(4rem, 24vw, 8rem);
+  }
+}
